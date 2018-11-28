@@ -1,0 +1,112 @@
+<html>
+  <head>
+  <title>Vena Prototype</title>
+
+	<!-- include css file here-->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script src="js/onsubmit_event.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+	  <div class="main">
+	    <form action="#" method="post" onsubmit="return ValidationEvent()">
+		  <h2>Vena</h2><hr/>
+		  <label>Name :</label><br/>
+		  <input type="text" name="name" id="name" placeholder="Name" /><br/>
+
+		  <label>Email :</label><br/>
+		  <input type="text" name="email" id="email" placeholder="Valid Email" /> <br/>
+       <label>Date of Birth: <input id="birthday"  name="birthday" placeholder="dd/mm/yyyy"  type="text"></label>
+		  <label>Gender :</label><br/>
+		  <input type="radio" name="gender" value="Male" id="male" /><label>Male</label>
+		  <input type="radio" name="gender" value="Female" id="female" /><label>Female</label><br/><br/>
+
+  		  <label>Contact No. :</label><br/>
+		  <input type="text" name="contact" id="contact" placeholder="Contact No." /> <br/>
+      <label>Address :</label> <input id="myAddress" name="myAddress" placeholder="Address" type="text">
+                                        <input id="Suburb" name="Suburb" placeholder="Suburb" type="text">
+      <label>State :</label>            <input type="text" name="State" id="State" placeholder="State" /><br/>
+  <label>Postcode :</label>            <input type="text" name="Postcode" id="Postcode" placeholder="Postcode" /><br/>
+
+
+		  <input type="submit" value="Submit" />
+		  <span>All type of validation will be execute on OnSubmit Event. </span>
+	    </form>
+	  </div>
+
+	</div>
+  <script>
+
+  document.getElementById("name").addEventListener("change", myFunction);
+  document.getElementById("email").addEventListener("change", myFunction);
+  document.getElementById("contact").addEventListener("change", myFunction);
+  document.getElementById("myAddress").addEventListener("change", myFunction);
+  document.getElementById("birthday").addEventListener("change", myFunction);
+  document.getElementById("male").addEventListener("change", myFunction);
+  document.getElementById("female").addEventListener("change", myFunction);
+document.getElementById("State").addEventListener("change", myFunction);
+document.getElementById("Suburb").addEventListener("change", myFunction);
+document.getElementById("Postcode").addEventListener("change", myFunction);
+
+  function myFunction() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var contact = document.getElementById("contact").value;
+   var AState = document.getElementsByName("State").value;
+    var Abirthday = document.getElementById("birthday").value;
+        var aMyAddress = document.getElementById("myAddress").value;
+var MySuburb = document.getElementById("Suburb").value;
+var MyPostcode = document.getElementById("Postcode").value;
+      var counter=0;
+
+      if (name != '') {
+        counter=counter+1;
+      }
+      if (contact != '') {
+        counter=counter+1;
+      }
+      if (email != '') {
+        counter=counter+1;
+      }
+      if (Abirthday != '') {
+        counter=counter+1;
+      }
+
+      if (aMyAddress != '') {
+        counter=counter+1;
+      }
+      if (AState != '') {
+        counter=counter+1;
+      }
+      if (MySuburb != '') {
+        counter=counter+1;
+      }
+
+      if (MyPostcode != '') {
+        counter=counter+1;
+      }
+
+	if( document.getElementById("male").checked || document.getElementById("female").checked ) {counter=counter+1;}
+
+
+      if (counter ==1 ){ document.body.style.backgroundColor="#127452";return false}
+
+      if (counter ==3 ){document.body.style.backgroundColor="#174f89";return false}
+        if (counter ==2 ){document.body.style.backgroundColor="#ffa708";return false}
+  if (counter ==4 ){document.body.style.backgroundColor="#e36c2a";return false}
+  if (counter ==5 ){document.body.style.backgroundColor="#ba302b";return false}
+
+
+
+
+
+
+
+    }
+
+  </script>
+  </body>
+</html>
